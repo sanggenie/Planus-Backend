@@ -137,7 +137,7 @@ create table group_todo_completion
 
 create table exception_log
 (
-    id             bigint auto_increment primary key,
+    exception_log_id    bigint auto_increment primary key,
     created_at     datetime(6)  null,
     updated_at     datetime(6)  null,
     exception_type varchar(255) null,
