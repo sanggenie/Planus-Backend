@@ -1,17 +1,18 @@
 package scs.planus.global.util.logTracker.entity;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import scs.planus.domain.BaseTimeEntity;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
-@NoArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class ExceptionLog extends BaseTimeEntity {
+
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "exception_log_id")
     private Long id;
     @Embedded
     private MetaData metaData;
