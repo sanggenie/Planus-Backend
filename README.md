@@ -1,22 +1,23 @@
+# 함께 일정 관리하는 서비스, Planus☁️
 <div align="center">
-  <img width="30%" height="30%" alt="image" src="https://github.com/Planus-SCS/Planus-Backend/assets/97597051/a301bcf6-1b47-49da-9cb7-519517488f19">
-
-### 함께 일정 관리하는 서비스, Planus☁️
 
 [<img src="https://img.shields.io/badge/-Swagger-green?style=flat&logo=swagger&logoColor=white"/>](https://www.planus.shop/swagger-ui/index.html) [<img src="https://img.shields.io/badge/-Appstore-blue?style=flat&logo=app-store&logoColor=white" />](https://apps.apple.com/kr/app/%ED%94%8C%EB%9E%98%EB%84%88%EC%8A%A4/id6459008318) [<img src="https://img.shields.io/badge/Release-v1.0.0-critical?style=flat&logo=icloud&logoColor=white" />](https://github.com/Planus-SCS/Planus-Backend/releases/tag/v1.0.0)
 
+  <img width="100%" height="100%" alt="image" src="https://github.com/Planus-SCS/Planus-Backend/assets/54929830/0db57b2f-ffa9-4dbd-8d25-bda9c9cc2032">
+
 </div>
 
-## 🔍 소개
+---
 
-<p align="center">
-  <img width="16%" height="350" alt="image" src="https://github.com/Planus-SCS/Planus-Backend/assets/97597051/29faeb22-1c30-4b3e-8b41-7d9b8f646d67">
-  <img width="16%" height="350" alt="image" src="https://github.com/Planus-SCS/Planus-Backend/assets/97597051/6a1a2ca5-ba33-4ac9-ac7a-062bb8c784af">
-  <img width="16%" height="350" alt="image" src="https://github.com/Planus-SCS/Planus-Backend/assets/97597051/d5d08b69-0f3f-4f42-92db-a8fd2eeb2306"> 
-  <img width="16%" height="350" alt="image" src="https://github.com/Planus-SCS/Planus-Backend/assets/97597051/50467eba-cd00-41c4-aa7d-db052e5ab5f3">
-  <img width="16%" height="350" alt="image" src="https://github.com/Planus-SCS/Planus-Backend/assets/97597051/fc458d7e-58c9-440c-ae7b-3d6d81533a7f"> 
-  <img width="16%" height="350" alt="image" src="https://github.com/Planus-SCS/Planus-Backend/assets/97597051/ce0f8786-225f-43be-a027-d665ae86074f"> 
-</p>
+## 🔍 주요 기능 소개
+
+## 홈 캘린더 기능
+
+<img width="100%" height="100%" alt="image" src="https://github.com/Planus-SCS/Planus-Backend/assets/54929830/a4be895e-3cfb-4bf2-92d4-0e0da29f449e">
+
+## 그룹 활동 기능
+
+<img width="100%" height="100%" alt="image" src="https://github.com/Planus-SCS/Planus-Backend/assets/54929830/d3b97027-baf3-4099-99ef-0eea364904d6">
 
 ---
 
