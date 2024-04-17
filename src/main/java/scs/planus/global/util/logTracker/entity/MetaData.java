@@ -18,6 +18,6 @@ public class MetaData {
     private String className;
     private String methodName;
     private Integer lineNumber;
-    @Column(length = 50000)
+    @Column(columnDefinition = "TEXT")
     private String parameter;
 }
