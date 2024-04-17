@@ -147,6 +147,6 @@ create table exception_log
     line_number    int          null,
     requesturi     varchar(255) null,
     http_method    varchar(255) null,
-    parameter      varchar(50000) null,
+    parameter      TEXT null,
     email          varchar(255) null
 );
