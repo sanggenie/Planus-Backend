@@ -14,17 +14,13 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import scs.planus.global.auth.service.JwtProvider;
 import scs.planus.global.exception.PlanusException;
+import scs.planus.global.util.gson.EntityExclusionStrategy;
 import scs.planus.global.util.logTracker.entity.ExceptionLog;
 import scs.planus.global.util.logTracker.service.ExceptionLogService;
 import scs.planus.global.util.logTracker.service.dto.ExceptionLogDto;
 import scs.planus.global.util.slackAlarm.SlackAlarmGenerator;
 
-import javax.persistence.Entity;
 import javax.servlet.http.HttpServletRequest;
-import java.lang.annotation.Annotation;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import static scs.planus.global.exception.CustomExceptionStatus.INTERNAL_SERVER_ERROR;
 
@@ -78,23 +74,11 @@ public class ExceptionLogAspect {
     }
     
     private String getParameter(ProceedingJoinPoint joinPoint) {
-        Gson gson = new GsonBuilder().create();
+        Gson gson = new GsonBuilder()
+                .addSerializationExclusionStrategy(new EntityExclusionStrategy())
+                .create();
 
-        Object[] argList = joinPoint.getArgs();
-
-        List<Object> collect = Arrays.stream(argList)
-                .map(arg -> {
-                    Annotation[] annotations = arg.getClass().getAnnotations();
-                    if (Arrays.stream(annotations).
-                            anyMatch(ano -> ano.annotationType().equals(Entity.class))) {
-                        return String.format("Entity(%s)", arg.getClass().getSimpleName());
-                    } else {
-                        return arg;
-                    }
-                })
-                .collect(Collectors.toList());
-
-        return gson.toJson(collect);
+        return gson.toJson(joinPoint.getArgs());
     }
 
     private String resolveToken(HttpServletRequest request) {
