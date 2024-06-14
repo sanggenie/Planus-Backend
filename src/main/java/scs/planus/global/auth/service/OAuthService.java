@@ -83,17 +83,19 @@ public class OAuthService {
     }
 
     private Member saveOrGetExistedAppleMember(OAuthUserInfo userInfo, FullName fullName) {
-        return memberRepository.findByEmail(userInfo.getEmail())
+
+        String nickname = getNicknameFromFullName(fullName);
+
+        AppleUserInfo appleUserInfo = (AppleUserInfo) userInfo;
+
+        appleUserInfo.updateNickname(nickname);
+
+        return memberRepository.findByEmail(appleUserInfo.getEmail())
                 .map(findMember -> {
-                    validateDuplicatedEmail(findMember, userInfo);
-                    return getExistedMember(findMember, userInfo);
+                    validateDuplicatedEmail(findMember, appleUserInfo);
+                    return getExistedMember(findMember, appleUserInfo);
                 })
-                .orElseGet(() -> {
-                    String nickname = getNicknameFromFullName(fullName);
-                    AppleUserInfo appleUserInfo = (AppleUserInfo) userInfo;
-                    appleUserInfo.updateNickname(nickname);
-                    return memberRepository.save(appleUserInfo.toMember());
-                });
+                .orElseGet(() -> memberRepository.save(appleUserInfo.toMember()));
     }
 
     private void validateDuplicatedEmail(Member findMember, OAuthUserInfo userInfo) {
